@@ -36,7 +36,7 @@ class PortScan(threading.Thread):
 #调用masscan
 def portscan(scan_ip):
     temp_ports = [] #设定一个临时端口列表
-    os.system('masscan/bin/masscan ' + scan_ip + ' -p 1-65535 -oJ masscan.json --rate 2000')
+    os.system('masscan/bin/masscan ' + scan_ip + ' -p 1-65535 -oJ masscan.json --rate 1000')
     #提取json文件中的端口
     with open('masscan.json', 'r') as f:
         for line in f:
