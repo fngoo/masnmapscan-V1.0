@@ -100,7 +100,7 @@ def main():
             final_ip = line.strip('\n')
             queue.put(final_ip)
         threads = []
-        thread_count = 30
+        thread_count = 1
         for i in range(thread_count):
             threads.append(PortScan(queue))
         for t in threads:
